@@ -451,11 +451,6 @@ table td {
   background-color: rgb(255, 116, 116);
 }
 
-.new-entry-cell,
-.summary {
-  text-align: right;
-}
-
 .new-entry{
   border: 1px solid black ;
   border-radius: 20px;
@@ -470,4 +465,13 @@ table td {
 
 .new-entry:hover {
   background-color: rgb(70, 237, 70);
+}
+
+.end {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 10px 40px;
 }

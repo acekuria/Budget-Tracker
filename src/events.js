@@ -23,6 +23,6 @@ import { entries } from "./budgetModule";
 
       saveData('entries', entries);
 
-      displayEntries();
+      displayEntries(entries);
   })
 

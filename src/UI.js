@@ -1,9 +1,10 @@
 import { entries } from "./budgetModule";
-export function displayEntries () {
+export function displayEntries (entries) {
+  
   const table = document.querySelector('table');
   const newEntryBody = document.querySelector('.new-entry-body');
-
-  const processedDescriptions = new Set();
+  const tbody = document.querySelector('tbody');
+  tbody.innerHTML = '';
 
   entries
   .filter((entry) => !entry.deleted)
@@ -11,15 +12,6 @@ export function displayEntries () {
     return b.date - a.date
   })
   .forEach((entry) => {
-    if (processedDescriptions.has(entry.description)) {
-      return;
-    }
-
-    processedDescriptions.add(entry.description);
-
-    const tbody = document.createElement('tbody');
-    tbody.classList.add('entries');
-
     // Create row for the tbody
     const row = document.createElement('tr');
 
