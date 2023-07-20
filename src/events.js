@@ -10,24 +10,19 @@ import { entries } from "./budgetModule";
 
   const table = document.querySelector('table');
   const tbodyElements = table.querySelectorAll('tbody');
-  const entryButton = document.querySelector('.new-entry');
+  export const entryButton = document.querySelector('.new-entry');
 
   entryButton.addEventListener('click', (e) => {
-      let date = tbodyElements[i].querySelector('.date');
-      let description = tbodyElements[i].querySelector('.description');
-      let type = tbodyElements[i].querySelector('.type');
-      let amount = tbodyElements[i].querySelector('.amount');
 
-      if () {
-// stop same name entries
-      }
-      createEntry(date.value, description.value, type.value, amount.value);
+    const newEntry =  createEntry('', '', 'income', '')
+//       if () {
+// // stop same name entries
+//       }
       
-      addEntryToArray(createEntry);
+      addEntryToArray(newEntry);
 
       saveData('entries', entries);
 
-      displayEntry(date.value, description.value, type.value, amount.value);
-
+      displayEntries();
   })
 

@@ -11,7 +11,7 @@ export function displayEntries () {
     return b.date - a.date
   })
   .forEach((entry) => {
-    if (processedDescriptions.includes(entry.description)) {
+    if (processedDescriptions.has(entry.description)) {
       return;
     }
 
