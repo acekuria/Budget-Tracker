@@ -1,5 +1,4 @@
-
-let entries = JSON.parse(localStorage.getItem('entries')) || [];
+export let entries = JSON.parse(localStorage.getItem('entries')) || [];
 
 export function createEntry (date, description, type, amount) {
   return {

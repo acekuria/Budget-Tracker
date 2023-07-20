@@ -467,3 +467,7 @@ table td {
 .new-entry::before {
   content: '+'
 }
+
+.new-entry:hover {
+  background-color: rgb(70, 237, 70);
+}

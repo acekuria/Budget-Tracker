@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Budget Planner</title>
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,56 +30,8 @@
             <th >Amount ($)</th>
           </tr>
         </thead>
-
-        <tbody class="entries">
-          <tr>
-            <td >
-              <input class=" input date" type="date">
-            </td>
-            <td >
-              <input type="text" class="input description">
-            </td>
-            <td>
-             <select class=" input type" name="type" id="">
-               <option value="income">Income</option>
-               <option value="expense">Expense</option>
-             </select>
-            </td>
-            <td >
-              <input class="input amount" type="number">
-            </td>
-            <td>
-              <button class="input delete">
-                X
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td >
-              <input class=" input date" type="date">
-            </td>
-            <td >
-              <input type="text" class="input description">
-            </td>
-            <td>
-             <select class=" input type" name="type" id="">
-               <option value="income">Income</option>
-               <option value="expense">Expense</option>
-             </select>
-            </td>
-            <td >
-              <input class="input amount" type="number">
-            </td>
-            <td>
-              <button class="input delete">
-                X
-              </button>
-            </td>
-          </tr> 
-          
-        </tbody>
         
-        <tbody>
+        <tbody class="new-entry-body">
           <tr>
             <td class="new-entry-cell" colspan="4">
               <button class="new-entry">

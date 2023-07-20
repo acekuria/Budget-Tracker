@@ -1,6 +1,8 @@
 console.log('Hey there');
 
-import { displayEntry } from "./UI";
-import { addEntry } from "./events";
-displayEntry();
+import { displayEntries } from "./UI";
+import { updateUI } from "./UI";
+import { entries } from "./budgetModule";
+
+displayEntries();
 
