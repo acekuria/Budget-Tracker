@@ -6,8 +6,7 @@ export function createEntry (date, description, type, amount) {
     description,
     type, 
     amount,
-    deleted: false,
-    edited: false,
+    
   }
 };
 

@@ -1,5 +1,5 @@
 import { entries } from "./budgetModule";
-import { deleteData } from "./localStorage";
+import { saveData } from "./localStorage";
 export function displayEntries (entries) {
   
   const table = document.querySelector('table');
@@ -7,8 +7,8 @@ export function displayEntries (entries) {
   const tbody = document.querySelector('tbody');
   tbody.innerHTML = '';
 
+  
   entries
-  .filter((entry) => !entry.deleted)
   .sort((a, b) => {
     return b.date - a.date
   })
@@ -69,8 +69,9 @@ export function displayEntries (entries) {
     table.insertBefore(tbody, newEntryBody);
 
   deleteButton.addEventListener('click', (e) => {
-    entry.deleted = true
-    deleteData(entry);
+    
+    entries.splice(entries.indexOf(entry), 1);
+    saveData('entries', entries);
     displayEntries(entries);
   })
   })

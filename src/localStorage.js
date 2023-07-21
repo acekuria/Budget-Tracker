@@ -8,7 +8,3 @@ export function saveData(key, value) {
 export function getData(key) {
   return JSON.parse(localStorage.getItem(key))
 };
-
-export function deleteData(key) {
-  localStorage.removeItem(key)
-}
