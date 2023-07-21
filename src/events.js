@@ -21,7 +21,7 @@ import { entries } from "./budgetModule";
       displayEntries(entries);
   })
 
-  export const inputs = document.querySelectorAll('.input');
+  const inputs = document.querySelectorAll('.input');
   
   inputs.forEach(
     (input) => {
