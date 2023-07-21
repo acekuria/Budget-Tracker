@@ -11,7 +11,7 @@ export function displayEntries (entries) {
 
   entries
   .sort((a, b) => {
-    return b.date - a.date
+    return b.currentDate - a.currentDate
   })
   .forEach((entry) => {
     // Create row for the tbody

@@ -6,7 +6,7 @@ export function createEntry (date, description, type, amount) {
     description,
     type, 
     amount,
-    
+    currentDate: new Date(),
   }
 };
 
