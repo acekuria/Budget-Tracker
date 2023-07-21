@@ -19,6 +19,3 @@ export function editEntry () {
   edited: true;
 }
 
-export function deleteEntry () {
-  deleted: true;
-}

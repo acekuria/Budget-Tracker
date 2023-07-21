@@ -1,4 +1,5 @@
 import { entries } from "./budgetModule";
+import { deleteData } from "./localStorage";
 export function displayEntries (entries) {
   
   const table = document.querySelector('table');
@@ -66,6 +67,12 @@ export function displayEntries (entries) {
     tbody.appendChild(row);
 
     table.insertBefore(tbody, newEntryBody);
+
+  deleteButton.addEventListener('click', (e) => {
+    entry.deleted = true
+    deleteData(entry);
+    displayEntries(entries);
+  })
   })
 
 }
