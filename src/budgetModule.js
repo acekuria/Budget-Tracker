@@ -14,7 +14,4 @@ export function addEntryToArray (createEntry) {
   entries.push(createEntry);
 }
 
-export function editEntry () {
-  edited: true;
-}
 

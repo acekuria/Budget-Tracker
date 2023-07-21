@@ -1,5 +1,6 @@
 import { entries } from "./budgetModule";
 import { saveData } from "./localStorage";
+import { CalculateTotal } from "./calculations";
 export function displayEntries (entries) {
   
   const table = document.querySelector('table');
@@ -7,7 +8,6 @@ export function displayEntries (entries) {
   const tbody = document.querySelector('tbody');
   tbody.innerHTML = '';
 
-  
   entries
   .sort((a, b) => {
     return b.date - a.date
@@ -77,20 +77,36 @@ export function displayEntries (entries) {
       saveData('entries', entries);
       displayEntries(entries)
     })
+    
     inputDescription.addEventListener('change', (e) => {
       entry.description = inputDescription.value;
       saveData('entries', entries);
       displayEntries(entries)
     })
+
+    inputAmount.addEventListener('change', (e) => {
+      // let totalText = document.querySelector('.total');
+      const amountValue = parseFloat(inputAmount.value);
+      entry.amount = amountValue;
+      
+      
+      // total += entry.amount;
+      // saveData('total', total);
+      // total.innerText = total.toFixed(2);
+      
+      saveData('entries', entries);
+      displayEntries(entries);
+      
+    })
+
     selectType.addEventListener('change', (e) => {
+      const amountValue = parseFloat(inputAmount.value);
+      entry.amount = -amountValue
+      
       entry.type = selectType.value;
       saveData('entries', entries);
-      displayEntries(entries)
-    })
-    inputAmount.addEventListener('change', (e) => {
-      entry.amount = inputAmount.value;
-      saveData('entries', entries);
-      displayEntries(entries)
+      displayEntries(entries);
+      
     })
 
   deleteButton.addEventListener('click', (e) => {
@@ -99,5 +115,4 @@ export function displayEntries (entries) {
     displayEntries(entries);
   })
   })
-
 }
