@@ -8,6 +8,9 @@ export function displayEntries (entries) {
   const tbody = document.querySelector('tbody');
   tbody.innerHTML = '';
 
+  let total = 0; // Initialize total amount variable
+
+
   entries
   .sort((a, b) => {
     return b.date - a.date
@@ -88,7 +91,7 @@ export function displayEntries (entries) {
       // let totalText = document.querySelector('.total');
       const amountValue = parseFloat(inputAmount.value);
       entry.amount = amountValue;
-      
+      total += entry.amount;
       
       // total += entry.amount;
       // saveData('total', total);
@@ -100,12 +103,18 @@ export function displayEntries (entries) {
     })
 
     selectType.addEventListener('change', (e) => {
-      const amountValue = parseFloat(inputAmount.value);
-      entry.amount = -amountValue
+      // if (entry.amount === '' ) {
+      //  alert('Please first enter an amount for this entry')
+      // }
+      // else {
+        const amountValue = parseFloat(inputAmount.value);
+      entry.amount = -(amountValue)
       
       entry.type = selectType.value;
       saveData('entries', entries);
       displayEntries(entries);
+      // }
+      
       
     })
 
@@ -114,5 +123,13 @@ export function displayEntries (entries) {
     saveData('entries', entries);
     displayEntries(entries);
   })
+
+  total += entry.amount;
+
   })
+
+  saveData('total', total);
+ // Update the display of the total amount on the webpage
+ const totalElement = document.querySelector('.total');
+ totalElement.textContent = Number(total).toFixed(2);
 }
