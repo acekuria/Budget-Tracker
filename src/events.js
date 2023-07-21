@@ -1,7 +1,6 @@
 import { createEntry } from "./budgetModule";
 import { displayEntries} from "./UI";
 import { saveData } from "./localStorage";
-import { getData } from "./localStorage";
 import { addEntryToArray } from "./budgetModule";
 import { entries } from "./budgetModule";
 

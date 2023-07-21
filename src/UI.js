@@ -1,6 +1,4 @@
-import { entries } from "./budgetModule";
 import { saveData } from "./localStorage";
-import { CalculateTotal } from "./calculations";
 export function displayEntries (entries) {
   
   const table = document.querySelector('table');
